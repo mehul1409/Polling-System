@@ -2,12 +2,13 @@ name: Keep Render Alive
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Runs every 3 minutes
+    - cron: '*/5 * * * *'  # Runs every 5 minutes
   workflow_dispatch: # Allows manual trigger
 
 jobs:
   ping_server:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,8 +18,18 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm install node-fetch
+      - name: Create ping script
+        run: |
+          echo "import fetch from 'node-fetch';
 
-      - name: Run health check script
-        run: node cron-job.js
+          fetch('https://polling-system-ofzk.onrender.com')
+            .then(res => {
+              console.log('Ping successful:', res.status);
+            })
+            .catch(err => {
+              console.error('Ping failed:', err);
+              process.exit(1);
+            });" > ping.mjs
+
+      - name: Run ping script
+        run: node ping.mjs
