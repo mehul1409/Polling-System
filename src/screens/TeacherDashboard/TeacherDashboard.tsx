@@ -77,7 +77,7 @@ export const TeacherDashboard: React.FC = () => {
 
   const fetchCurrentPoll = async () => {
     try {
-      const response = await fetch('https://polling-system-ofzk.onrender.com/api/polls/current');
+      const response = await fetch('http://localhost:3001/api/polls/current');
       if (response.ok) {
         const poll = await response.json();
         setCurrentPoll(poll);

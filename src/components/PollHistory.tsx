@@ -31,7 +31,7 @@ export const PollHistory: React.FC = () => {
 
   const fetchPollHistory = async () => {
     try {
-      const response = await fetch('https://polling-system-ofzk.onrender.com/api/polls/history');
+      const response = await fetch('http://localhost:3001/api/polls/history');
       if (response.ok) {
         const pollsData = await response.json();
         setPolls(pollsData);

@@ -44,7 +44,7 @@ export const ChatPanel: React.FC = () => {
 
   const fetchChatHistory = async () => {
     try {
-      const response = await fetch('https://polling-system-ofzk.onrender.com/api/chat/history');
+      const response = await fetch('http://localhost:3001/api/chat/history');
       if (response.ok) {
         const history = await response.json();
         setMessages(history);

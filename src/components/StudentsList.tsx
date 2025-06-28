@@ -40,7 +40,7 @@ export const StudentsList: React.FC = () => {
 
   const fetchStudents = async () => {
     try {
-      const response = await fetch('https://polling-system-ofzk.onrender.com/api/students');
+      const response = await fetch('http://localhost:3001/api/students');
       if (response.ok) {
         const studentsData = await response.json();
         setStudents(studentsData);
