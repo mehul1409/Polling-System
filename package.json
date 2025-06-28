@@ -5,8 +5,7 @@
   "name": "live-polling-system",
   "description": "A full-stack live polling system with real-time communication",
   "scripts": {
-    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
-    "dev:client": "vite",
+    "dev": "vite",
     "dev:server": "cd server && npm run dev",
     "build": "vite build",
     "setup:server": "cd server && npm install"
