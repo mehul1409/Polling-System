@@ -15,7 +15,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://polling-system-ofzk.onrender.com",
+    origin: "https://polling-system-hazel.vercel.app/",
     methods: ["GET", "POST"]
   }
 });
