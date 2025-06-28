@@ -15,7 +15,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://polling-system-hazel.vercel.app/",
+    origin: "http://localhost:5173", // Update with your frontend URL
     methods: ["GET", "POST"]
   }
 });
