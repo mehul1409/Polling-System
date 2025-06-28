@@ -20,10 +20,6 @@ Then, you'll be able to run a development version of the project with:
 npm run dev
 ```
 
-After a few seconds, your project should be accessible at the address
-[https://polling-system-ofzk.onrender.com/](https://polling-system-ofzk.onrender.com/)
-
-
 If you are satisfied with the result, you can finally build the project for release with:
 
 ```
