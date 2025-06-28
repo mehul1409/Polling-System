@@ -28,7 +28,7 @@ export const SocketProvider: React.FC<SocketProviderProps> = ({ children }) => {
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:3001');
+    const newSocket = io('https://polling-system-ofzk.onrender.com');
 
     newSocket.on('connect', () => {
       setIsConnected(true);
